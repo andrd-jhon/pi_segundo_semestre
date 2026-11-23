@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciamento de Quadras | QuadrasPlay</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+  <main class="conteiner">
+
+    <header class="cabecalho-pagina">
+      <div class="topo-cabecalho">
+        <div class="logo">
+          <i class="ph ph-court-basketball"></i>
+          <span>QuadrasPlay</span>
+        </div>
+
+        <span class="identificacao-administrador">
+          <i class="ph ph-user-circle"></i>
+          Administrador
+        </span>
+      </div>
+
+      <div class="titulo-cabecalho">
+        <h1>Gerenciamento de Quadras</h1>
+        <p>Cadastre e gerencie as quadras disponíveis para reserva.</p>
+      </div>
+    </header>
+
+    <section class="cartao">
+
+      <div class="cabecalho-secao">
+        <div>
+          <h2 id="form-title">Cadastrar Nova Quadra</h2>
+          <p>Preencha as informações da quadra.</p>
+        </div>
+
+        <i class="ph ph-plus-circle icone-secao" id="form-icon"></i>
+      </div>
+
+      <form id="court-form">
+
+        <input type="hidden" id="court-id">
+
+        <div class="grade-formulario">
+
+          <div class="grupo-campo">
+            <label for="name">Nome da Quadra</label>
+            <input type="text" id="name" placeholder="Ex: Quadra Central" required>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="sport">Modalidade Esportiva</label>
+            <select id="sport" required>
+              <option value="">Selecione uma modalidade</option>
+              <option value="Futebol">Futebol</option>
+              <option value="Futsal">Futsal</option>
+              <option value="Basquete">Basquete</option>
+              <option value="Vôlei">Vôlei</option>
+              <option value="Tênis">Tênis</option>
+              <option value="Handebol">Handebol</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+
+          <div class="grupo-campo largura-total">
+            <label for="location">Localização</label>
+            <input type="text" id="location" placeholder="Ex: Rua das Flores, 120 - Centro" required>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="surface">Tipo de Piso</label>
+            <select id="surface" required>
+              <option value="">Selecione o piso</option>
+              <option value="Grama natural">Grama natural</option>
+              <option value="Grama sintética">Grama sintética</option>
+              <option value="Concreto">Concreto</option>
+              <option value="Madeira">Madeira</option>
+              <option value="Saibro">Saibro</option>
+              <option value="Piso emborrachado">Piso emborrachado</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="capacity">Capacidade de Pessoas</label>
+            <input type="number" id="capacity" placeholder="Ex: 20" min="1" required>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="price">Valor por Hora (R$)</label>
+            <input type="number" id="price" placeholder="Ex: 50.00" min="0" step="0.01" required>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="coverage">Cobertura</label>
+            <select id="coverage" required>
+              <option value="">Selecione</option>
+              <option value="Coberta">Coberta</option>
+              <option value="Descoberta">Descoberta</option>
+            </select>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="status">Status</label>
+            <select id="status" required>
+              <option value="Ativa">Ativa</option>
+              <option value="Inativa">Inativa</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="acoes-formulario">
+          <button type="button" class="botao-secundario" id="cancel-btn" hidden>
+            Cancelar Edição
+          </button>
+
+          <button type="submit" class="botao-principal" id="submit-btn">
+            <i class="ph ph-plus"></i>
+            Cadastrar Quadra
+          </button>
+        </div>
+
+      </form>
+
+    </section>
+
+    <section class="cartao secao-listagem">
+
+      <div class="cabecalho-secao cabecalho-listagem">
+        <div>
+          <h2>Quadras Cadastradas</h2>
+          <p>Gerencie as quadras disponíveis no sistema.</p>
+        </div>
+
+        <span class="contador" id="court-counter">0 quadras</span>
+      </div>
+
+      <div class="campo-pesquisa">
+        <i class="ph ph-magnifying-glass"></i>
+        <input type="text" id="search" placeholder="Pesquisar quadra...">
+      </div>
+
+      <div id="court-list" class="lista-quadras"></div>
+
+    </section>
+
+    <footer>
+      <p>QuadrasPlay &copy; 2026 - Painel Administrativo</p>
+    </footer>
+
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
